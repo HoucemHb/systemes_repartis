@@ -1,9 +1,10 @@
+package systemes_repartis;
 import java.net.*;
 
 public class UDPServer {
     public static void main(String[] args) {
         try {
-            DatagramSocket serverSocket = new DatagramSocket(9876);
+            DatagramSocket serverSocket = new DatagramSocket(8080);
             byte[] receiveData = new byte[1024];
 
             while (true) {

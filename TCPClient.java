@@ -1,19 +1,25 @@
+package systemes_repartis;
 import java.io.*;
 import java.net.*;
 
 public class TCPClient {
-    public static void main(String[] args) throws Exception {
-        String sentence;
-        String modifiedSentence;
-        BufferedReader inFromUser = new BufferedReader(new InputStreamReader(System.in));
-        Socket clientSocket = new Socket("localhost", 6789);
-        DataOutputStream outToServer = new DataOutputStream(clientSocket.getOutputStream());
-        BufferedReader inFromServer = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-        sentence = inFromUser.readLine();
-        outToServer.writeBytes(sentence + '\n');
-        modifiedSentence = inFromServer.readLine();
-        System.out.println("FROM SERVER: " + modifiedSentence);
-        clientSocket.close();
+    public static void main(String[] args) throws IOException {
+        Socket socket = new Socket("localhost", 8082);
+
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+        BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+
+        String userInput;
+        while ((userInput = reader.readLine()) != null) {
+            out.println(userInput);
+            System.out.println("Le serveur a répondu avec : " + in.readLine());
+        }
+
+        reader.close();
+        out.close();
+        in.close();
+        socket.close();
     }
 }
 

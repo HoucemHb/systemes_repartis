@@ -1,3 +1,4 @@
+package systemes_repartis;
 import java.net.*;
 
 public class UDPClient {
@@ -10,7 +11,7 @@ public class UDPClient {
 
             String sentence = "Hello, Server!";
             sendData = sentence.getBytes();
-            DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, 9876);
+            DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, 8080);
             clientSocket.send(sendPacket);
 
             DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
