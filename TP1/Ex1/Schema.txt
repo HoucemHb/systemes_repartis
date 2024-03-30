@@ -1,0 +1,24 @@
+package systemes_repartis.TP1.Ex1;
+
+Client:
+1- connextion au serveur via l'addresse et le port
+2- Envoie de données ( "ma preiere socket" )
+3- Reception de la réponse du serveur
+
+Serveur:
+1- Initialisation d'un ServerSocket à l'écoute sur un port donné
+2- Accepter la connextion du client (s'il y en a)
+3- Réception des données envoyées par le client
+4- Envoie de la réponse ("Bien recu" )
+
+
+  Client                Serveur
+    |                      |
+    | --- Connexion --->   |
+    |                      |
+    | --- "ma première     |
+        socket"     --->
+    |                      |
+    | <--- "bien reçu" --- |
+    |                      |
+
