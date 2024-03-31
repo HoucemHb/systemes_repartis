@@ -1,4 +1,4 @@
-# Projet de Communication Distribuée en Java
+# Projet de Systèmes Distribuée en Java
 
 Ce projet vise à explorer et comparer trois technologies de communication distribuée largement utilisées dans l'écosystème Java : Java RMI, gRPC, et les Sockets Java. À travers la mise en œuvre de trois services distincts, ce projet met en lumière les particularités, les forces et les faiblesses de chaque technologie dans des scénarios d'utilisation variés.
 
