@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package com.houcem.grpmessaging;
+
+message Message {
+  string sender = 1;
+  string recipient = 2;
+  string text = 3;
+}
+
+message SendMessageRequest {
+  Message message = 1;
+}
+
+message SendMessageResponse {
+  bool success = 1;
+}
+
+message GetMessagesRequest {
+  string user = 1;
+}
+
+message GetMessagesResponse {
+  repeated Message messages = 1;
+}
+
+service MessagingService {
+  rpc SendMessage(SendMessageRequest) returns (SendMessageResponse);
+  rpc GetMessages(GetMessagesRequest) returns (GetMessagesResponse);
+}
