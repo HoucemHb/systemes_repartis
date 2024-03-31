@@ -1,4 +1,4 @@
-package systemes_repartis;
+package systemes_repartis.TCP_UDP.UDP;
 import java.net.*;
 
 public class UDPClient {
